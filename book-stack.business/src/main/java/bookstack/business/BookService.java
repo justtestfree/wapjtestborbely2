@@ -21,5 +21,13 @@ public class BookService {
 	public List<Book> getAllBooks() {
 		return bookDao.findAll();
 	}
+	
+	public void createNew(String isbn, String title)
+	{
+	Book kniha = new Book();
+	kniha.setIsbn(isbn);
+	kniha.setTitle(title);
+	bookDao.create(kniha);
+	}
 
 }

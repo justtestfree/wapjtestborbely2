@@ -16,15 +16,22 @@ public class MyMain {
 	@Inject
 	private BookDAO bookDao;
 	
+	@Inject
+	private BookService bookService;
+	
+	
 	@PostConstruct
 	private void init() {
 		System.out.println("MyMain initialization");
 		//System.out.println("list size: "+bookDao.getBooksByTitle("example").size());
+		
 	}
 	
-	@Schedule(hour="20", minute="26")
+	//@Schedule(hour="20", minute="42")
 	private void query() {
 		System.out.println("list size: "+bookDao.getBooksByTitle("example").size());
+		bookService.createNew("sdiidssd", "Druha kniha");
+		System.out.println("Uspesne.");
 	}
 
 }

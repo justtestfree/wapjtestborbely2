@@ -14,7 +14,7 @@ import bookstack.persistence.entities.Book;
 
 @ViewScoped
 @Named
-public class BooksView implements Serializable {
+public class BooksView implements Serializable { //vzdy treba implementovat ked chceme pouzivat na fronende (napr na stranke) serializable a named potom pri named sa bere nazov triedy s malym (booksView v tomtom pripade)
 
 	private static final long serialVersionUID = 6559129950166292602L;
 	
