@@ -36,6 +36,10 @@ public class Book implements Serializable {
     @ManyToOne(fetch = FetchType.EAGER, cascade= {CascadeType.PERSIST,CascadeType.MERGE})
     @JoinColumn(name = "author")
 	private Author autor;
+    
+    @ManyToOne(fetch = FetchType.EAGER, cascade= {CascadeType.PERSIST,CascadeType.MERGE})
+    @JoinColumn(name = "kategoria")
+    private Kategorie kategoria;
 	
 	public Book() {}
 
@@ -71,6 +75,15 @@ public class Book implements Serializable {
 		this.autor = autor;
 	}
 
+	public Kategorie getKategoria() {
+		return kategoria;
+	}
+
+	public void setKategoria(Kategorie kategoria) {
+		this.kategoria = kategoria;
+	}
+
+	
 
 	
 
